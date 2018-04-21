@@ -1,0 +1,66 @@
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <group ns="robot1">
+    <param name="tf_prefix" value="robot1"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro.py
+      '$(find robot_description_pkg)/urdf/diff_wheeled_robot_r1.xacro'" />
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_robot1" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description
+                -urdf
+                -unpause
+                -z 0.01
+                -model robot1
+                -ros_namespace /gazebo"
+          respawn="false" output="screen" />
+
+    <!-- start robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher"
+      name="robot_state_publisher1" output="screen" >
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+  </group>
+
+  <group ns="robot2">
+    <param name="tf_prefix" value="robot2"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro.py
+      '$(find robot_description_pkg)/urdf/diff_wheeled_robot_r2.xacro'" />
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_robot2" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description
+                -urdf
+                -unpause
+                -x 1.00
+                -z 0.01
+                -model robot2
+                -ros_namespace /gazebo"
+          respawn="false" output="screen" />
+
+    <!-- start robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher"
+      name="robot_state_publisher2" output="screen" >
+    <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+  </group>
+
+</launch>
