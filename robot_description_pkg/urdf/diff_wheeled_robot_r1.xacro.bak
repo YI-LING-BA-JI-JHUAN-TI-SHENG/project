@@ -2,7 +2,7 @@
 <robot name="differential_wheeled_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
 
-  <xacro:include filename="$(find mastering_ros_robot_description_pkg)/urdf/wheel.urdf.xacro" /> 
+  <xacro:include filename="$(find robot_description_pkg)/urdf/wheel.urdf.xacro" /> 
 
 
 <!-- Defining the colors used in this robot -->
@@ -83,7 +83,7 @@
   <link name="base_footprint">
     <inertial>
       <mass value="0.0001" />
-      <origin xyz="0 1 0" />
+      <origin xyz="0 0 0" />
       <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
           iyy="0.0001" iyz="0.0" 
           izz="0.0001" />
@@ -308,7 +308,7 @@
       <broadcastTF>1</broadcastTF>
       <wheelTorque>30</wheelTorque>
       <wheelAcceleration>1.8</wheelAcceleration>
-      <commandTopic>cmd_vel</commandTopic>
+      <commandTopic>/r1/cmd_vel</commandTopic>
       <odometryFrame>odom</odometryFrame> 
       <odometryTopic>odom</odometryTopic> 
       <robotBaseFrame>base_footprint</robotBaseFrame>
