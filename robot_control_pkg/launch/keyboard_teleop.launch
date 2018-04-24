@@ -1,0 +1,8 @@
+<launch>
+  <!-- differential_teleop_key already has its own built in velocity smoother -->
+  <node pkg="robot_control_pkg" type="robot_keyboard.py" name="robot_keyboard"  output="screen">
+    <param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+    <remap from="/cmd_vel" to="/r1/cmd_vel"/>
+  </node>
+</launch>
