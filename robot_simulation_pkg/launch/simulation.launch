@@ -13,6 +13,7 @@
           args="-param robot_description
                 -urdf
                 -unpause
+                -x -1.00
                 -z 0.01
                 -model robot1
                 -ros_namespace /gazebo"

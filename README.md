@@ -11,7 +11,7 @@ $ roslaunch robot_simulation_pkg simulation.launch
 ### Use keyboard control robot
 
 ```sh
-$ roslaunch robot_simulation_pkg simulation.launch
+$ roslaunch robot_simulation_pkg simulation_one_robot.launch
 $ roslaunch robot_control_pkg keyboard_teleop.launch
 ```
 
