@@ -1,5 +1,17 @@
 # Project
 
+## File Architecture
+```
+catkin_ws/
+  src/
+    project/                    ← this git repository
+      robot_control_pkg/        ← package
+        CMakeList.txt
+        package.xml
+      robot_description_pkg/    ← package
+      robot_simulation_pkg/     ← package
+```
+
 ## Usage command
 
 ### Simulation in gazebo
