@@ -33,3 +33,11 @@ $ roslaunch robot_control_pkg keyboard_teleop.launch
 $ roslaunch rosbridge_server rosbridge_websocket.launch
 $ roslaunch robot_simulation_pkg simulation.launch
 ```
+
+### Open zbar example launch
+
++ Need to install zbar `sudo apt-get install ros-indigo-zbar-ros`
+
+```sh
+$ roslaunch zbar_ros_pkg example.launch
+```
