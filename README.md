@@ -41,3 +41,11 @@ $ roslaunch robot_simulation_pkg simulation.launch
 ```sh
 $ roslaunch zbar_ros_pkg example.launch
 ```
+
+### Navigation
+
+```sh
+$ roslaunch robot_simulation_pkg simulation_one_robot.launch
+$ roslaunch robot_navigation_pkg amcl.launch
+$ rviz
+```
