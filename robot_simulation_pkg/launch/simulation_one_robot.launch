@@ -2,27 +2,23 @@
 
   <include file="$(find robot_simulation_pkg)/launch/maze_world.launch"/>
 
-  <group ns="robot1">
-    <param name="tf_prefix" value="robot1"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py
+    '$(find robot_description_pkg)/urdf/diff_wheeled_robot_r1.xacro'" />
 
-    <param name="robot_description" command="$(find xacro)/xacro.py
-      '$(find robot_description_pkg)/urdf/diff_wheeled_robot_r1.xacro'" />
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_robot1" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description
+              -urdf
+              -unpause
+              -x 1.00
+              -z 0.01
+              -model robot1
+              -ros_namespace /gazebo"
+        respawn="false" output="screen" />
 
-    <!-- push robot_description to factory and spawn robot in gazebo -->
-    <node name="spawn_robot1" pkg="gazebo_ros" type="spawn_model"
-          args="-param robot_description
-                -urdf
-                -unpause
-                -x 1.00
-                -z 0.01
-                -model robot1
-                -ros_namespace /gazebo"
-          respawn="false" output="screen" />
-
-    <!-- start robot state publisher -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher"
-      name="robot_state_publisher1" output="screen" >
-      <param name="publish_frequency" type="double" value="50.0" />
-    </node>
-  </group>
+  <!-- start robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher"
+    name="robot_state_publisher1" output="screen" >
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
 </launch>
