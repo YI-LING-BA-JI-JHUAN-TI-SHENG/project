@@ -29,17 +29,11 @@ ros.on('close', function() {
 
 // Create a connection to the rosbridge WebSocket server.
 var ip;
-var ipHttps;
 function onload() {
   ip = document.getElementById('ip');
-  ipHttps = document.getElementById('ipHttps');
 }
 function connect(){
   let ip_s = 'ws://' + ip.value + ':9090';
-  ros.connect(ip_s);
-}
-function connectHttps(){
-  let ip_s = 'wss://' + ipHttps.value + ':9090';
   ros.connect(ip_s);
 }
 
