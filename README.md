@@ -51,3 +51,11 @@ $ roslaunch robot_simulation_pkg simulation_one_robot.launch
 $ roslaunch robot_navigation_pkg amcl.launch
 $ rviz
 ```
+
+### Watch map on web
+
+```sh
+$ roslaunch rosbridge_server rosbridge_websocket.launch
+$ roslaunch robot_simulation_pkg simulation_one_robot.launch
+$ roslaunch robot_navigation_pkg amcl.launch
+```
