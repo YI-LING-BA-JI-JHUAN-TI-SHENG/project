@@ -34,6 +34,8 @@ $ roslaunch rosbridge_server rosbridge_websocket.launch
 $ roslaunch robot_simulation_pkg simulation.launch
 ```
 
++ Open web page and input IP address.
+
 ### Open zbar example launch
 
 + Need to install zbar `sudo apt-get install ros-indigo-zbar-ros`
