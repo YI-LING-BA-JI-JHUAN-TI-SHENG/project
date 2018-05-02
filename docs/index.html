@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
   <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script src="https://static.robotwebtools.org/threejs/current/three.js"></script>
+  <script src="https://static.robotwebtools.org/ros3djs/current/ros3d.min.js"></script>
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -44,6 +46,7 @@
    <option value = "r1r2">robot 1 + 2</option>
   </select>
   <li><tt>control: <label id="labelRobot">robot 1</label></tt></li>
+  <div id="map"></div>
   <h2>Move</h2>
   <div class="btn-group">
     <button id="u" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">u</button>

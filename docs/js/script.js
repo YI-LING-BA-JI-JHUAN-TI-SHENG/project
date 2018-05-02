@@ -31,6 +31,20 @@ ros.on('close', function() {
 var ip;
 function onload() {
   ip = document.getElementById('ip');
+
+  // Create the main viewer.
+  var viewer = new ROS3D.Viewer({
+    divID : 'map',
+    width : 800,
+    height : 600,
+    antialias : true
+  });
+
+  // Setup the map client.
+  var gridClient = new ROS3D.OccupancyGridClient({
+    ros : ros,
+    rootObject : viewer.scene
+  });
 }
 function connect(){
   let ip_s = 'ws://' + ip.value + ':9090';
