@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+  <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onload();">
+  <h1>roslib demo</h1>
+  <ol>
+    <li><tt>roslaunch rosbridge_server rosbridge_websocket.launch</tt></li>
+    <li><tt>rostopic pub /listener std_msgs/String "Hello, World"</tt></li>
+    <li><tt>receive: <label id="receiveLabel"></label></tt></li>
+    <li><tt>rostopic echo /cmd_vel</tt></li>
+  </ol>
+  <h2>Connect</h2>
+  <input type="text" name="enter" class="enter" value="" id="ip"/>
+  <input type="button" value="connect" onclick="connect();"/>
+  <br>
+  <!-- <input type="text" name="enter" class="enter" value="" id="ipHttps"/> -->
+  <!-- <input type="button" value="connect" onclick="connectHttps();"/> -->
+  <br>
+  <div id="statusIndicator">
+    <p id="connecting">
+      Connecting to rosbridge...
+    </p>
+    <p id="connected" style="color:#00D600; display:none">
+      Connected
+    </p>
+    <p id="error" style="color:#FF0000; display:none">
+      Error in the backend!
+    </p>
+    <p id="closed" style="display:none">
+      Connection closed.
+    </p>
+  </div>
+  <br>
+  <select id = "selRobot" onchange="changeRobot()">
+   <option value = "r1">robot 1</option>
+   <option value = "r2">robot 2</option>
+   <option value = "r1r2">robot 1 + 2</option>
+  </select>
+  <li><tt>control: <label id="labelRobot">robot 1</label></tt></li>
+  <h2>Move</h2>
+  <div class="btn-group">
+    <button id="u" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">u</button>
+    <button id="i" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">i</button>
+    <button id="o" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">o</button>
+  </div>
+  <div class="btn-group">
+    <button id="j" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">j</button>
+    <button id="k" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">k</button>
+    <button id="l" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">l</button>
+  </div>
+  <div class="btn-group">
+    <button id="m" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">m</button>
+    <button id="," onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">,</button>
+    <button id="." onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">.</button>
+  </div>
+  <br>
+  <h2>Speed</h2>
+  <div class="btn-group">
+    <button id="q" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">q</button>
+    <button id="w" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">w</button>
+    <button id="e" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">e</button>
+  </div>
+  <div class="btn-group">
+    <button id="z" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">z</button>
+    <button id="x" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">x</button>
+    <button id="c" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">c</button>
+  </div>
+</body>
+</html>
