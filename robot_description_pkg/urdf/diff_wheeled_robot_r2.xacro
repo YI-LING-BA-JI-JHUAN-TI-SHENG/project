@@ -487,7 +487,7 @@
       <broadcastTF>1</broadcastTF>
       <wheelTorque>30</wheelTorque>
       <wheelAcceleration>1.8</wheelAcceleration>
-      <commandTopic>/r1/cmd_vel</commandTopic>
+      <commandTopic>/r2/cmd_vel</commandTopic>
       <odometryFrame>odom</odometryFrame>
       <odometryTopic>odom</odometryTopic>
       <robotBaseFrame>base_footprint</robotBaseFrame>
