@@ -18,6 +18,7 @@ ros.on('connection', function() {
   document.getElementById('error').style.display = 'none';
   document.getElementById('closed').style.display = 'none';
   document.getElementById('connected').style.display = 'inline';
+  autoconnect = clearInterval(autoconnect);
 });
 
 ros.on('close', function() {
@@ -31,7 +32,8 @@ ros.on('close', function() {
 var ip;
 
 function onload() {
-  ip = document.getElementById('ip');
+  // ip = document.getElementById('ip');
+  ip = 'localhost';
 
   // Create the main viewer.
   var viewer = new ROS3D.Viewer({
@@ -48,8 +50,10 @@ function onload() {
   });
 }
 
+var autoconnect = setInterval(function(){connect();}, 1000);
 function connect(){
-  let ip_s = 'ws://' + ip.value + ':9090';
+  // let ip_s = 'ws://' + ip.value + ':9090';
+  let ip_s = 'ws://' + ip + ':9090';
   ros.connect(ip_s);
 }
 
