@@ -40,14 +40,14 @@
   <!-- caster wheel radius and height -->
   <!-- caster wheel mass -->
   <property name="caster_f_height" value="0.04" />
-  <property name="caster_f_radius" value="0.025" />
+  <property name="caster_f_radius" value="0.0275" />
   <property name="caster_f_mass" value="0.5" /> <!-- in kg-->
 
 
   <!-- caster wheel radius and height -->
   <!-- caster wheel mass -->
   <property name="caster_b_height" value="0.04" />
-  <property name="caster_b_radius" value="0.025" />
+  <property name="caster_b_radius" value="0.0275" />
   <property name="caster_b_mass" value="0.5" /> <!-- in kg-->
 
 
@@ -104,7 +104,7 @@
   </gazebo>
 
   <joint name="base_footprint_joint" type="fixed">
-    <origin xyz="0 1 ${wheel_radius - base_z_origin_to_wheel_origin}" rpy="0 0 0" />
+    <origin xyz="0 0 ${wheel_radius - base_z_origin_to_wheel_origin}" rpy="0 0 0" />
     <parent link="base_footprint"/>
     <child link="base_link" />
   </joint>
