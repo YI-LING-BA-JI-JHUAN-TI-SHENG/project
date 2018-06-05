@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
   <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
   <script src="https://static.robotwebtools.org/threejs/current/three.js"></script>
@@ -12,6 +13,15 @@
 
 <body onload="onload();">
   <h1>demo 1</h1>
+  <h2>Login</h2>
+    <div class="login-group">
+      <label id="l1">room number: </label>
+      <input type="text" name="enter" value="" id="roomnumber" style="width: 110px;"/>
+      <br>
+      <label id="l2">password:  </label>
+      <input type="text" name="enter" value="" id="password" style="width: 150px;"/>
+      <input type="button" value="login" onclick="login();"/>
+    </div>
   <h2>Connection</h2>
   <div id="statusIndicator">
     <p id="connecting">
@@ -42,6 +52,5 @@
   </div>
   <br>
   <li><tt><label id="labelRobot"></label></tt></li>
-  <div id="map"></div>
 </body>
 </html>
