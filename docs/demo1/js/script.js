@@ -57,12 +57,13 @@ function login() {
     document.getElementById('login_status').innerHTML = "Status: wrong room number";
   } else {
     document.getElementById('login_status').innerHTML = "Status: succeed";
-    var close = document.getElementById("login-group");
-    if (close.style.display === "none") {
-      close.style.display = "block";
-    } else {
-      close.style.display = "none";
-    }
+    document.getElementById('room_status').innerHTML = "Room " + room_number;
+    var section = document.getElementById("login-group");
+    section.style.display = "none";
+    var section = document.getElementById("service-group");
+    section.style.display = "block";
+    var section = document.getElementById("connect-group");
+    section.style.display = "block";
     connect();
   }
 }

@@ -24,35 +24,31 @@
       <input type="text" name="enter" value="" id="password" style="width: 150px;"/>
       <input type="button" value="login" onclick="login();"/>
   </div>
-  <h2>Connection</h2>
-  <div id="statusIndicator">
-    <p id="connecting">
-      Connecting to rosbridge...
-    </p>
-    <p id="connected" style="color:#00D600; display:none">
-      Connected
-    </p>
-    <p id="error" style="color:#FF0000; display:none">
-      Error in the backend!
-    </p>
-    <p id="closed" style="display:none">
-      Connection closed.
-    </p>
+  <div id="connect-group" style="display:none;">
+    <h4>Connection</h4>
+    <div id="statusIndicator">
+      <p id="connecting">
+        Connecting to rosbridge...
+      </p>
+      <p id="connected" style="color:#00D600; display:none">
+        Connected
+      </p>
+      <p id="error" style="color:#FF0000; display:none">
+        Error in the backend!
+      </p>
+      <p id="closed" style="display:none">
+        Connection closed.
+      </p>
+    </div>
   </div>
-  <h2>Room</h2>
-  <div class="btn-group">
-    <button id="1" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">1</button>
-    <button id="2" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">2</button>
-    <button id="3" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">3</button>
+  <div id="service-group" style="display:none;">
+    <h2>Service</h2>
+    <h3 id="room_status"></h3>
+    <div class="btn-group">
+      <button id="a" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">a</button>
+      <button id="b" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">b</button>
+      <button id="c" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">c</button>
+    </div>
   </div>
-  <br>
-  <h2>Service</h2>
-  <div class="btn-group">
-    <button id="a" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">a</button>
-    <button id="b" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">b</button>
-    <button id="c" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">c</button>
-  </div>
-  <br>
-  <li><tt><label id="labelRobot"></label></tt></li>
 </body>
 </html>
