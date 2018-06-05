@@ -50,8 +50,19 @@ function onload() {
   });
 }
 
-var autoconnect = setInterval(function(){connect();}, 1000);
-function connect(){
+var room_number;
+function login() {
+    room_number = document.getElementById('room_number').value;
+    if (room_number < 1 || room_number > 3) {
+        document.getElementById('login_status').innerHTML = "Status: wrong room number";
+    } else {
+        document.getElementById('login_status').innerHTML = "Status: succeed";
+        connect();
+    }
+}
+
+// var autoconnect = setInterval(function(){connect();}, 1000);
+function connect() {
   // let ip_s = 'ws://' + ip.value + ':9090';
   let ip_s = 'ws://' + ip + ':9090';
   ros.connect(ip_s);
