@@ -62,6 +62,12 @@ function connect() {
 // ------------------
 
 // Create a Topic object with details of the topic's name and message type.
+var speaker = new ROSLIB.Topic({
+  ros : ros,
+  name : '/speaker',
+  messageType : 'std_msgs/String'
+});
+
 var listener = new ROSLIB.Topic({
   ros : ros,
   name : '/listener',
@@ -77,10 +83,16 @@ listener.subscribe(function(message) {
 
 // Do function when clicking.
 function MouseDown(clicked_id) {
-  PublishTwist(clicked_id);
+  var data = "" + room_number + ":" + clicked_id;
+  console.log(data);
+  PublishData(data);
 }
 
-function PublishTwist(clicked_id) {
+function PublishData(data) {
+  var msg = new ROSLIB.Message({
+    data : data
+  });
+  speaker.publish(msg);
 }
 
 function MouseUp(){
