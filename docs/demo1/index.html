@@ -13,9 +13,9 @@
 
 <body onload="onload();">
   <h1>demo 1</h1>
-  <h2>Login</h2>
-    <div class="login-group">
-      <label id="login_status">Status: </label>
+  <div id="login-group">
+    <h2>Login</h2>
+    <label id="login_status">Status: </label>
       <br>
       <label id="l1">room number: </label>
       <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
@@ -23,7 +23,7 @@
       <label id="l2">password:  </label>
       <input type="text" name="enter" value="" id="password" style="width: 150px;"/>
       <input type="button" value="login" onclick="login();"/>
-    </div>
+  </div>
   <h2>Connection</h2>
   <div id="statusIndicator">
     <p id="connecting">
