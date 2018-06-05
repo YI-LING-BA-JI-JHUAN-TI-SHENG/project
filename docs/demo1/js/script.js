@@ -110,5 +110,26 @@ function PublishData(data) {
   speaker.publish(msg);
 }
 
-function MouseUp(){
+function change_destination(){
+  var target_des = document.getElementById("select_destination").value;
+    var A = document.getElementById("qr_a");
+    var B = document.getElementById("qr_b");
+    var C = document.getElementById("qr_c");
+  if (target_des === "A") {
+    A.style.display = "block";
+    B.style.display = "none";
+    C.style.display = "none";
+  } else if (target_des === "B") {
+    A.style.display = "none";
+    B.style.display = "block";
+    C.style.display = "none";
+  } else if (target_des === "C") {
+    A.style.display = "none";
+    B.style.display = "none";
+    C.style.display = "block";
+  } else {
+    A.style.display = "none";
+    B.style.display = "none";
+    C.style.display = "none";
+  }
 }

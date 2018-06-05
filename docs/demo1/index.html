@@ -13,6 +13,21 @@
 
 <body onload="onload();">
   <h1>demo 1</h1>
+  <select id = "select_destination" onchange="change_destination()">
+    <option value = "X">目的地</option>
+    <option value = "A">A</option>
+    <option value = "B">B</option>
+    <option value = "C">C</option>
+  </select>
+  <div id="qr_a" style="display:none;">
+    <img src="https://imgur.com/vv24NdA.png" alt="A">
+  </div>
+  <div id="qr_b" style="display:none;">
+    <img src="https://imgur.com/xCiszmQ.png" alt="B">
+  </div>
+  <div id="qr_c" style="display:none;">
+    <img src="https://imgur.com/geKsVq3.png" alt="C">
+  </div>
   <div id="login-group">
     <h2>Login</h2>
     <label id="login_status">Status: </label>
@@ -28,7 +43,7 @@
     <input type="button" value="logout" onclick="logout();"/>
   </div>
   <div id="connect-group" style="display:none;">
-    <h4>Connection</h4>
+    <!-- <h4>Connection</h4> -->
     <div id="statusIndicator">
       <p id="connecting">
         Connecting to rosbridge...
@@ -45,8 +60,8 @@
     </div>
   </div>
   <div id="service-group" style="display:none;">
-    <h2>Service</h2>
-    <h3 id="room_status"></h3>
+    <h4 id="room_status"></h4>
+    <h4>Service: </h4>
     <div class="btn-group">
       <button id="a" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">a</button>
       <button id="b" onmousedown="MouseDown(this.id)" onmouseup="MouseUp()">b</button>
