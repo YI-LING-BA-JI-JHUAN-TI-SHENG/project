@@ -45,12 +45,27 @@ function login() {
     document.getElementById('room_status').innerHTML = "Room " + room_number;
     var section = document.getElementById("login-group");
     section.style.display = "none";
+    var section = document.getElementById("logout-group");
+    section.style.display = "block";
     var section = document.getElementById("service-group");
     section.style.display = "block";
     var section = document.getElementById("connect-group");
     section.style.display = "block";
     connect();
   }
+}
+
+function logout() {
+  document.getElementById('login_status').innerHTML = "Status:";
+  document.getElementById('room_status').innerHTML = "Room ";
+  var section = document.getElementById("login-group");
+  section.style.display = "block";
+  var section = document.getElementById("logout-group");
+  section.style.display = "none";
+  var section = document.getElementById("service-group");
+  section.style.display = "none";
+  var section = document.getElementById("connect-group");
+  section.style.display = "none";
 }
 
 function connect() {
