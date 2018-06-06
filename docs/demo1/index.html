@@ -13,60 +13,71 @@
 
 <body onload="onload();">
   <h1>demo 1</h1>
-  <select id = "select_destination" onchange="change_destination()">
-    <option value = "X">目的地</option>
-    <option value = "A">A</option>
-    <option value = "B">B</option>
-    <option value = "C">C</option>
-  </select>
-  <div id="qr_a" style="display:none;">
-    <img src="https://imgur.com/vv24NdA.png" alt="A">
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Room')" id="defaultOpen">Room</button>
+    <button class="tablinks" onclick="openTab(event, 'Public')">Public</button>
   </div>
-  <div id="qr_b" style="display:none;">
-    <img src="https://imgur.com/xCiszmQ.png" alt="B">
-  </div>
-  <div id="qr_c" style="display:none;">
-    <img src="https://imgur.com/geKsVq3.png" alt="C">
-  </div>
-  <div id="login-group">
-    <h2>Login</h2>
-    <label id="login_status">Status: </label>
-      <br>
-      <label id="l1">room number: </label>
-      <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
-      <br>
-      <label id="l2">password:  </label>
-      <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
-      <input type="button" value="login" onclick="login();"/>
-  </div>
-  <div id="logout-group" style="display:none;">
-    <input type="button" value="logout" onclick="logout();"/>
-  </div>
-  <div id="connect-group" style="display:none;">
-    <!-- <h4>Connection</h4> -->
-    <div id="statusIndicator">
-      <p id="connecting">
-        Connecting to rosbridge...
-      </p>
-      <p id="connected" style="color:#00D600; display:none">
-        Connected
-      </p>
-      <p id="error" style="color:#FF0000; display:none">
-        Error in the backend!
-      </p>
-      <p id="closed" style="display:none">
-        Connection closed.
-      </p>
+  <div id="Public" class="tabcontent">
+    <select id = "select_destination" onchange="change_destination()">
+      <option value = "X">目的地</option>
+      <option value = "A">A</option>
+      <option value = "B">B</option>
+      <option value = "C">C</option>
+    </select>
+    <div id="qr_a" style="display:none;">
+      <img src="https://imgur.com/vv24NdA.png" alt="A">
+    </div>
+    <div id="qr_b" style="display:none;">
+      <img src="https://imgur.com/xCiszmQ.png" alt="B">
+    </div>
+    <div id="qr_c" style="display:none;">
+      <img src="https://imgur.com/geKsVq3.png" alt="C">
     </div>
   </div>
-  <div id="service-group" style="display:none;">
-    <h4 id="room_status"></h4>
-    <h4>Service: </h4>
-    <div class="btn-group">
-      <button id="a" onmousedown="MouseDown(this.id)">a</button>
-      <button id="b" onmousedown="MouseDown(this.id)">b</button>
-      <button id="c" onmousedown="MouseDown(this.id)">c</button>
+  <div id="Room" class="tabcontent">
+    <div id="login-group">
+      <h2>Login</h2>
+      <label id="login_status">Status: </label>
+        <br>
+        <label id="l1">room number: </label>
+        <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
+        <br>
+        <label id="l2">password:  </label>
+        <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
+        <input type="button" value="login" onclick="login();"/>
+    </div>
+    <div id="logout-group" style="display:none;">
+      <input type="button" value="logout" onclick="logout();"/>
+    </div>
+    <div id="connect-group" style="display:none;">
+      <!-- <h4>Connection</h4> -->
+      <div id="statusIndicator">
+        <p id="connecting">
+          Connecting to rosbridge...
+        </p>
+        <p id="connected" style="color:#00D600; display:none">
+          Connected
+        </p>
+        <p id="error" style="color:#FF0000; display:none">
+          Error in the backend!
+        </p>
+        <p id="closed" style="display:none">
+          Connection closed.
+        </p>
+      </div>
+    </div>
+    <div id="service-group" style="display:none;">
+      <h4 id="room_status"></h4>
+      <h4>Service: </h4>
+      <div class="btn-group">
+        <button id="a" onmousedown="MouseDown(this.id)">a</button>
+        <button id="b" onmousedown="MouseDown(this.id)">b</button>
+        <button id="c" onmousedown="MouseDown(this.id)">c</button>
+      </div>
     </div>
   </div>
 </body>
 </html>
+<script>
+  document.getElementById("defaultOpen").click();
+</script>
