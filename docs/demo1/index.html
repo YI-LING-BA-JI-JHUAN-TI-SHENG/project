@@ -38,13 +38,16 @@
     <div id="login-group">
       <h2>Login</h2>
       <label id="login_status">Status: </label>
-        <br>
-        <label id="l1">room number: </label>
-        <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
-        <br>
-        <label id="l2">password:  </label>
-        <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
-        <input type="button" value="login" onclick="login();"/>
+      <br>
+      <label id="l1">IP address: </label>
+      <input type="text" name="enter" value="localhost" id="ip" style="width: 110px;"/>
+      <br>
+      <label id="l1">room number: </label>
+      <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
+      <br>
+      <label id="l2">password:  </label>
+      <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
+      <input type="button" value="login" onclick="login();"/>
     </div>
     <div id="logout-group" style="display:none;">
       <input type="button" value="logout" onclick="logout();"/>

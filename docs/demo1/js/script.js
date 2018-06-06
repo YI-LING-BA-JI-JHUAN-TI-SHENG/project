@@ -18,7 +18,6 @@ ros.on('connection', function() {
   document.getElementById('error').style.display = 'none';
   document.getElementById('closed').style.display = 'none';
   document.getElementById('connected').style.display = 'inline';
-  autoconnect = clearInterval(autoconnect);
 });
 
 ros.on('close', function() {
@@ -33,7 +32,7 @@ var ip;
 var room_number;
 
 function onload() {
-  ip = 'localhost';
+  // ip = document.getElementById('ip');
 }
 
 function login() {
@@ -41,6 +40,7 @@ function login() {
   if (room_number < 1 || room_number > 3) {
     document.getElementById('login_status').innerHTML = "Status: wrong room number";
   } else {
+    ip = document.getElementById('ip').value;
     document.getElementById('login_status').innerHTML = "Status: succeed";
     document.getElementById('room_status').innerHTML = "Room " + room_number;
     var section = document.getElementById("login-group");
