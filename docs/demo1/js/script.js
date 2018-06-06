@@ -49,6 +49,8 @@ function login() {
     section.style.display = "block";
     var section = document.getElementById("service-group");
     section.style.display = "block";
+    var section = document.getElementById("destination-group");
+    section.style.display = "block";
     var section = document.getElementById("connect-group");
     section.style.display = "block";
     connect();
@@ -63,6 +65,8 @@ function logout() {
   var section = document.getElementById("logout-group");
   section.style.display = "none";
   var section = document.getElementById("service-group");
+  section.style.display = "none";
+  var section = document.getElementById("destination-group");
   section.style.display = "none";
   var section = document.getElementById("connect-group");
   section.style.display = "none";
@@ -132,4 +136,21 @@ function change_destination(){
     B.style.display = "none";
     C.style.display = "none";
   }
+}
+
+function openTab(evt, tab_name) {
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tab_name).style.display = "block";
+    evt.currentTarget.className += " active";
 }
