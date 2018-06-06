@@ -9,256 +9,7 @@
     </include>
     <model name="box">
 	  <static>1</static>
-      <pose>6 7 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>12 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-			<geometry>
-            <box>
-              <size>12 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-		<inertial>
-         <mass value="100000"/>
-         <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-	    </inertial>
-      </link>
-    </model>
-    <model name="box1">
-	  <static>1</static>
-      <pose>6 -1 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>12 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-	<!--		<box>
-              <size>12 0.1 1</size>
-            </box>-->
-			  <mesh>
-			     <uri>model://qr_test/meshes/qrcode.dae</uri>
-			  </mesh>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://qr_test/materials/textures</uri>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-		<inertial>
-         <mass value="100000"/>
-         <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-	    </inertial>
-      </link>
-    </model>
-    <model name="box2">
-      <pose>4 1 0.5 0 0 0</pose>
-	  <static>1</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box3">
-      <pose>4 5 0.5 0 0 0</pose>
-	  <static>1</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box4">
-	  <static>1</static>
-      <pose>2 3 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box5">
-	  <static>1</static>
-      <pose>8 3 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>4 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box6">
-	  <static>1</static>
-      <pose>11 1 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>2 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>2 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box7">
-	  <static>1</static>
-      <pose>11 5 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>2 0.1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>2 0.1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
-		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="box8">
-	  <static>1</static>
-      <pose>0 4 0.5 0 0 0</pose>
+      <pose>0 3 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -268,7 +19,7 @@
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
               <size>0.1 6 1</size>
             </box>
@@ -277,18 +28,15 @@
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
-    <model name="box9">
+    <model name="box">
 	  <static>1</static>
-      <pose>12 2 0.5 0 0 0</pose>
+      <pose>10 3 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -298,7 +46,7 @@
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
               <size>0.1 6 1</size>
             </box>
@@ -307,134 +55,254 @@
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
-    <model name="box10">
+    <model name="box">
 	  <static>1</static>
-      <pose>6 3 0.5 0 0 0</pose>
+      <pose>2 0 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 4 1</size>
+              <size>4 0.1 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
-              <size>0.1 4 1</size>
+              <size>4 0.1 1</size>
             </box>
           </geometry>
           <material>
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
-    <model name="box11">
+    <model name="box">
 	  <static>1</static>
-      <pose>8 6 0.5 0 0 0</pose>
+      <pose>8 0 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>4 0.1 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>4 0.1 1</size>
             </box>
           </geometry>
           <material>
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
-    <model name="box12">
+    <model name="box">
 	  <static>1</static>
-      <pose>8 2 0.5 0 0 0</pose>
+      <pose>5 6 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>10 0.1 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>10 0.1 1</size>
             </box>
           </geometry>
           <material>
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
-    <model name="box13">
+    <model name="box">
 	  <static>1</static>
-      <pose>10 4 0.5 0 0 0</pose>
+      <pose>1 2 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>2 0.1 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
-          <geometry>
+	   <geometry>
             <box>
-              <size>0.1 2 1</size>
+              <size>2 0.1 1</size>
             </box>
           </geometry>
           <material>
             <script>
         		<uri>model://brick_box_3x1x3/materials/scripts</uri>
 		        <uri>model://brick_box_3x1x3/materials/textures</uri>
-				<name>BrickBox/Diffuse</name>
-<!--				<uri>model://grey_wall/materials/scripts</uri>
-				<uri>model://grey_wall/materials/textures</uri>
-				<name>vrc/grey_wall</name>-->
-			</script>
+			<name>BrickBox/Diffuse</name>
+	   </script>
           </material>
         </visual>
       </link>
     </model>
+    <model name="box">
+	  <static>1</static>
+      <pose>1 4 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>2 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
+		        <uri>model://brick_box_3x1x3/materials/textures</uri>
+			<name>BrickBox/Diffuse</name>
+	   </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="box">
+	  <static>1</static>
+      <pose>9 4 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>2 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
+		        <uri>model://brick_box_3x1x3/materials/textures</uri>
+			<name>BrickBox/Diffuse</name>
+	   </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="box">
+	  <static>1</static>
+      <pose>3 0.75 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
+		        <uri>model://brick_box_3x1x3/materials/textures</uri>
+			<name>BrickBox/Diffuse</name>
+	   </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="box">
+	  <static>1</static>
+      <pose>3 5.25 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
+		        <uri>model://brick_box_3x1x3/materials/textures</uri>
+			<name>BrickBox/Diffuse</name>
+	   </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="box">
+	  <static>1</static>
+      <pose>7 5.25 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>0.1 1.5 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://brick_box_3x1x3/materials/scripts</uri>
+		        <uri>model://brick_box_3x1x3/materials/textures</uri>
+			<name>BrickBox/Diffuse</name>
+	   </script>
+          </material>
+        </visual>
+      </link>
+    </model>-->
   </world>
 </sdf>
