@@ -32,7 +32,6 @@ var ip;
 var room_number;
 
 function onload() {
-  // ip = document.getElementById('ip');
 }
 
 function login() {
@@ -40,7 +39,6 @@ function login() {
   if (room_number < 1 || room_number > 3) {
     document.getElementById('login_status').innerHTML = "Status: wrong room number";
   } else {
-    ip = document.getElementById('ip').value;
     document.getElementById('login_status').innerHTML = "Status: succeed";
     document.getElementById('room_status').innerHTML = "Room " + room_number;
     var section = document.getElementById("login-group");
@@ -70,9 +68,11 @@ function logout() {
   section.style.display = "none";
   var section = document.getElementById("connect-group");
   section.style.display = "none";
+  ros.close();
 }
 
 function connect() {
+  ip = document.getElementById('ip').value;
   let ip_s = 'ws://' + ip + ':9090';
   ros.connect(ip_s);
 }
