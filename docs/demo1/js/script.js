@@ -49,6 +49,8 @@ function login() {
     section.style.display = "block";
     var section = document.getElementById("service-group");
     section.style.display = "block";
+    var section = document.getElementById("destination-group");
+    section.style.display = "block";
     var section = document.getElementById("connect-group");
     section.style.display = "block";
     connect();
@@ -63,6 +65,8 @@ function logout() {
   var section = document.getElementById("logout-group");
   section.style.display = "none";
   var section = document.getElementById("service-group");
+  section.style.display = "none";
+  var section = document.getElementById("destination-group");
   section.style.display = "none";
   var section = document.getElementById("connect-group");
   section.style.display = "none";
