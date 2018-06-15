@@ -64,5 +64,8 @@ $ roslaunch robot_navigation_pkg amcl.launch
 ### Central control
 
 ```sh
-$ roslaunch roslaunch central_control_pkg control.launch
+$ roslaunch central_control_pkg control.launch
+# test
+$ rostopic pub /speaker std_msgs/String 1:a     
+$ rostopic echo /move_base_simple/goal
 ```
