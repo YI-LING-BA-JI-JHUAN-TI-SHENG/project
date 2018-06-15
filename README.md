@@ -10,6 +10,7 @@ catkin_ws/
         package.xml
       robot_description_pkg/    ← package
       robot_simulation_pkg/     ← package
+      central_control_pkg/      ← package
 ```
 
 ## Usage command
@@ -58,4 +59,10 @@ $ rviz
 $ roslaunch rosbridge_server rosbridge_websocket.launch
 $ roslaunch robot_simulation_pkg simulation_one_robot.launch
 $ roslaunch robot_navigation_pkg amcl.launch
+```
+
+### Central control
+
+```sh
+$ roslaunch roslaunch central_control_pkg control.launch
 ```
