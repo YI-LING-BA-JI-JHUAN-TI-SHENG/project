@@ -23,5 +23,5 @@
     <param name="publish_frequency" type="double" value="50.0" />
   </node>
 
-  <node pkg="topic_tools" name="relay" type="relay" args="cmd_vel r1/cmd_vel"/>
+<!--  <node pkg="topic_tools" name="relay" type="relay" args="cmd_vel r1/cmd_vel"/>-->
 </launch>

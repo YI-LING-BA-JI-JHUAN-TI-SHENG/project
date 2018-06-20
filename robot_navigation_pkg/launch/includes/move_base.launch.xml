@@ -19,9 +19,9 @@
     <rosparam file="$(find robot_navigation_pkg)/param/dwa_local_planner_params.yaml" command="load" />
     <rosparam file="$(find robot_navigation_pkg)/param/move_base_params.yaml" command="load" />
 
-<!--
-    <remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/>
-    <remap from="odom" to="$(arg odom_topic)"/>
+
+    <remap from="cmd_vel" to="r1/cmd_vel"/>
+    <!--    <remap from="odom" to="$(arg odom_topic)"/>
 -->
 
   </node>

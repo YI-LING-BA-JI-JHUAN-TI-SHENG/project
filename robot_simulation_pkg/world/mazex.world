@@ -14,14 +14,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 6 1</size>
+              <size>0.05 6 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>0.1 6 1</size>
+              <size>0.05 6 1</size>
             </box>
           </geometry>
           <material>
@@ -41,14 +41,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 6 1</size>
+              <size>0.05 6 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>0.1 6 1</size>
+              <size>0.05 6 1</size>
             </box>
           </geometry>
           <material>
@@ -68,14 +68,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>4 0.1 1</size>
+              <size>4 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>4 0.1 1</size>
+              <size>4 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -95,14 +95,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>4 0.1 1</size>
+              <size>4 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>4 0.1 1</size>
+              <size>4 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -122,14 +122,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>10 0.1 1</size>
+              <size>10 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>10 0.1 1</size>
+              <size>10 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -144,19 +144,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>1 2 0.5 0 0 0</pose>
+      <pose>0.5 2 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -171,19 +171,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>1 4 0.5 0 0 0</pose>
+      <pose>0.5 4 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -198,19 +198,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>9 4 0.5 0 0 0</pose>
+      <pose>9.5 4 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>2 0.1 1</size>
+              <size>1 0.05 1</size>
             </box>
           </geometry>
           <material>
@@ -225,19 +225,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>3 0.75 0.5 0 0 0</pose>
+      <pose>3 1 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
           <material>
@@ -252,19 +252,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>3 5.25 0.5 0 0 0</pose>
+      <pose>3 5 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
           <material>
@@ -279,19 +279,19 @@
     </model>
     <model name="box">
 	  <static>1</static>
-      <pose>7 5.25 0.5 0 0 0</pose>
+      <pose>7 5 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
 	   <geometry>
             <box>
-              <size>0.1 1.5 1</size>
+              <size>0.05 2 1</size>
             </box>
           </geometry>
           <material>
@@ -303,6 +303,33 @@
           </material>
         </visual>
       </link>
-    </model>-->
+    </model>
+    <model name="qrcode1">
+	  <static>1</static>
+      <pose>0.7 2.025 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.05 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+	   <geometry>
+            <box>
+              <size>0.1 0.05 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+        		<uri>model://qrcode1/materials/scripts</uri>
+		        <uri>model://qrcode1/materials/textures</uri>
+                <name>qrcode/qr1</name>
+	        </script>
+          </material>
+        </visual>
+      </link>
+    </model>
   </world>
 </sdf>
