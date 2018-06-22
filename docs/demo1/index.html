@@ -18,8 +18,8 @@
     <button class="tablinks" onclick="openTab(event, 'Public')">Public</button>
   </div>
   <div id="Public" class="tabcontent">
-    <select id = "select_destination" onchange="change_destination()">
-      <option value = "X">目的地</option>
+    <select id = "select_destination" onchange="change_destination()" size="1">
+      <option value = "X" selected >目的地</option>
       <option value = "A">A</option>
       <option value = "B">B</option>
       <option value = "C">C</option>
@@ -35,25 +35,28 @@
     </div>
   </div>
   <div id="Room" class="tabcontent">
-    <div id="login-group">
-      <h2>Login</h2>
-      <label id="login_status">Status: </label>
-      <br>
-      <label id="l1">IP address: </label>
-      <input type="text" name="enter" value="localhost" id="ip" style="width: 110px;"/>
-      <br>
-      <label id="l1">room number: </label>
-      <input type="text" name="enter" value="" id="room_number" style="width: 110px;"/>
-      <br>
-      <label id="l2">password:  </label>
-      <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
-      <input type="button" value="login" onclick="login();"/>
-    </div>
-    <div id="logout-group" style="display:none;">
+    <form id="login-group">
+      <fieldset>
+        <legend>
+          login
+        </legend>
+        <label id="login_status">Status: </label>
+        <br>
+        <label id="l1">IP address: </label>
+        <input type="text" name="enter" value="localhost" id="ip" style="width: 110px;" autofocus/>
+        <br>
+        <label id="l1">room number: </label>
+        <input type="number" name="enter" value="" id="room_number" style="width: 110px;"/>
+        <br>
+        <label id="l2">password:  </label>
+        <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
+        <input type="button" value="login" onclick="login();"/>
+      </fieldset>
+    </form>
+    <form id="logout-group" style="display:none;">
       <input type="button" value="logout" onclick="logout();"/>
-    </div>
-    <div id="connect-group" style="display:none;">
-      <!-- <h4>Connection</h4> -->
+    </form>
+    <form id="connect-group" style="display:none;">
       <div id="statusIndicator">
         <p id="connecting">
           Connecting to rosbridge...
@@ -68,24 +71,32 @@
           Connection closed.
         </p>
       </div>
-    </div>
-    <div id="service-group" style="display:none;">
+    </form>
+    <form id="service-group" style="display:none;">
       <h4 id="room_status"></h4>
-      <h4>Service: </h4>
-      <div class="btn-group">
-        <button id="a" onmousedown="MouseDown(this.id)">a</button>
-        <button id="b" onmousedown="MouseDown(this.id)">b</button>
-        <button id="c" onmousedown="MouseDown(this.id)">c</button>
-      </div>
-    </div>
-    <div id="destination-group" style="display:none;">
-      <h4>Destination: </h4>
-      <div class="btn-group">
-        <button id="A" onmousedown="MouseDown(this.id)">A</button>
-        <button id="B" onmousedown="MouseDown(this.id)">B</button>
-        <button id="C" onmousedown="MouseDown(this.id)">C</button>
-      </div>
-    </div>
+      <fieldset>
+        <legend>
+          Service
+        </legend>
+        <div class="btn-group">
+          <button type="button" id="a" onmousedown="MouseDown(this.id)">a</button>
+          <button type="button" id="b" onmousedown="MouseDown(this.id)">b</button>
+          <button type="button" id="c" onmousedown="MouseDown(this.id)">c</button>
+        </div>
+      </fieldset>
+    </form>
+    <form id="destination-group" style="display:none;">
+      <fieldset>
+        <legend>
+          Destination
+        </legend>
+        <div class="btn-group">
+          <button type="button" id="A" onmousedown="MouseDown(this.id)">A</button>
+          <button type="button" id="B" onmousedown="MouseDown(this.id)">B</button>
+          <button type="button" id="C" onmousedown="MouseDown(this.id)">C</button>
+        </div>
+      </fieldset>
+    </form>
   </div>
 </body>
 </html>
