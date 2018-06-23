@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
   <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
   <script src="https://static.robotwebtools.org/threejs/current/three.js"></script>
   <script src="https://static.robotwebtools.org/ros3djs/current/ros3d.min.js"></script>
   <script src="js/script.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body onload="onload();">
@@ -40,15 +40,16 @@
         <legend>
           login
         </legend>
-        <label id="login_status">Status: </label>
-        <br>
-        <label id="l1">IP address: </label>
-        <input type="text" name="enter" value="localhost" id="ip" style="width: 110px;" autofocus/>
-        <br>
-        <label id="l1">room number: </label>
+        <label>Status: </label>
+        <label id="login_status" style="color:#FF0000;"></label>
+        <br />
+        <label>IP address: </label>
+        <input type="text" name="enter" value="localhost" id="ip" style="width: 140px;" autofocus/>
+        <br />
+        <label>room number: </label>
         <input type="number" name="enter" value="" id="room_number" style="width: 110px;"/>
-        <br>
-        <label id="l2">password:  </label>
+        <br />
+        <label>password: </label>
         <input type="password" name="enter" value="" id="password" style="width: 150px;"/>
         <input type="button" value="login" onclick="login();"/>
       </fieldset>
@@ -58,18 +59,10 @@
     </form>
     <form id="connect-group" style="display:none;">
       <div id="statusIndicator">
-        <p id="connecting">
-          Connecting to rosbridge...
-        </p>
-        <p id="connected" style="color:#00D600; display:none">
-          Connected
-        </p>
-        <p id="error" style="color:#FF0000; display:none">
-          Error in the backend!
-        </p>
-        <p id="closed" style="display:none">
-          Connection closed.
-        </p>
+        <p id="connecting"> Connecting to rosbridge...  </p>
+        <p id="connected" style="color:#00D600; display:none"> Connected </p>
+        <p id="error" style="color:#FF0000; display:none"> Error in the backend!  </p>
+        <p id="closed" style="display:none"> Connection closed.  </p>
       </div>
     </form>
     <form id="service-group" style="display:none;">

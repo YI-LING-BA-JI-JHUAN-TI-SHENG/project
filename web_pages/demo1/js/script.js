@@ -37,9 +37,9 @@ function onload() {
 function login() {
   room_number = document.getElementById('room_number').value;
   if (room_number < 1 || room_number > 3) {
-    document.getElementById('login_status').innerHTML = "Status: wrong room number";
+    document.getElementById('login_status').innerHTML = "wrong room number";
   } else {
-    document.getElementById('login_status').innerHTML = "Status: succeed";
+    document.getElementById('login_status').innerHTML = "succeed";
     document.getElementById('room_status').innerHTML = "Room " + room_number;
     var section = document.getElementById("login-group");
     section.style.display = "none";
