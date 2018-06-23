@@ -2,7 +2,6 @@
 // -----------------
 var ros = new ROSLIB.Ros();
 
-// If there is an error on the backend, an 'error' emit will be emitted.
 ros.on('error', function(error) {
   document.getElementById('connecting').style.display = 'none';
   document.getElementById('connected').style.display = 'none';
@@ -11,7 +10,6 @@ ros.on('error', function(error) {
   console.log(error);
 });
 
-// Find out exactly when we made a connection.
 ros.on('connection', function() {
   console.log('Connection made!');
   document.getElementById('connecting').style.display = 'none';
@@ -30,9 +28,6 @@ ros.on('close', function() {
 // Create a connection to the rosbridge WebSocket server.
 var ip;
 var room_number;
-
-function onload() {
-}
 
 function login() {
   room_number = document.getElementById('room_number').value;
@@ -56,7 +51,7 @@ function login() {
 }
 
 function logout() {
-  document.getElementById('login_status').innerHTML = "Status:";
+  document.getElementById('login_status').innerHTML = "";
   document.getElementById('room_status').innerHTML = "Room ";
   var section = document.getElementById("login-group");
   section.style.display = "block";
@@ -80,7 +75,6 @@ function connect() {
 // Publishing a Topic
 // ------------------
 
-// Create a Topic object with details of the topic's name and message type.
 var speaker = new ROSLIB.Topic({
   ros : ros,
   name : '/speaker',
@@ -96,29 +90,26 @@ var listener = new ROSLIB.Topic({
 listener.subscribe(function(message) {
   console.log('Received message on ' + listener.name + ': ' + message.data);
   document.getElementById('receiveLabel').innerHTML = message.data;
-  // If desired, we can unsubscribe from the topic as well.
-  // listener.unsubscribe();
 });
 
-// Do function when clicking.
-function MouseDown(clicked_id) {
+function mouseDown(clicked_id) {
   var data = "" + room_number + ":" + clicked_id;
   console.log(data);
-  PublishData(data);
+  publishData(data);
 }
 
-function PublishData(data) {
+function publishData(data) {
   var msg = new ROSLIB.Message({
     data : data
   });
   speaker.publish(msg);
 }
 
-function change_destination(){
+function changeDestination(){
   var target_des = document.getElementById("select_destination").value;
-    var A = document.getElementById("qr_a");
-    var B = document.getElementById("qr_b");
-    var C = document.getElementById("qr_c");
+  var A = document.getElementById("qr_a");
+  var B = document.getElementById("qr_b");
+  var C = document.getElementById("qr_c");
   if (target_des === "A") {
     A.style.display = "block";
     B.style.display = "none";
@@ -139,18 +130,15 @@ function change_destination(){
 }
 
 function openTab(evt, tab_name) {
-    var i, tabcontent, tablinks;
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tab_name).style.display = "block";
-    evt.currentTarget.className += " active";
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tab_name).style.display = "block";
+  evt.currentTarget.className += " active";
 }
