@@ -323,8 +323,8 @@
           </geometry>
           <material>
             <script>
-        		<uri>model://qrcode1/materials/scripts</uri>
-		        <uri>model://qrcode1/materials/textures</uri>
+            <uri>model://qrcode1/materials/scripts</uri>
+            <uri>model://qrcode1/materials/textures</uri>
                 <name>qrcode/qr1</name>
 	        </script>
           </material>
