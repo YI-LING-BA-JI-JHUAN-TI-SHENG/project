@@ -51,6 +51,7 @@ $ roslaunch zbar_ros_pkg example.launch
 $ roslaunch robot_simulation_pkg simulation_one_robot.launch
 $ roslaunch robot_navigation_pkg amcl.launch
 $ rviz
+$ rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
 ```
 
 ### Watch map on web
