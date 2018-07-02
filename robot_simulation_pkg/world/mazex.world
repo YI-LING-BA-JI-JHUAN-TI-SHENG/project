@@ -306,19 +306,19 @@
     </model>
     <model name="qrcode1">
       <static>1</static>
-      <pose>0.7 2.025 0.1 0 0 0</pose>
+      <pose>2.975 1 0.1 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 0.05 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 0.05 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
           <material>
@@ -326,6 +326,60 @@
               <uri>model://qrcode1/materials/scripts</uri>
               <uri>model://qrcode1/materials/textures</uri>
               <name>qrcode/qr1</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+<model name="qrcode2">
+      <static>1</static>
+      <pose>2.975 5 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://qrcode2/materials/scripts</uri>
+              <uri>model://qrcode2/materials/textures</uri>
+              <name>qrcode/qr2</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+<model name="qrcode3">
+      <static>1</static>
+      <pose>9.975 5 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://qrcode3/materials/scripts</uri>
+              <uri>model://qrcode3/materials/textures</uri>
+              <name>qrcode/qr3</name>
             </script>
           </material>
         </visual>
