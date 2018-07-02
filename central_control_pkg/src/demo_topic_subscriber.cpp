@@ -92,7 +92,7 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
 {
     ROS_INFO("Recieved  [%s]", msg->data.c_str());
     char goal = msg->data.c_str()[0];
-    if(robot1[0] == '1'){ 
+    if(robot1[0] == '1' && msg->data.c_str()[2] != '$'){ 
         if(goal == robot1[1]){
             std::cout << "Arrived the room" << std::endl;
             if(isupper(robot1[2])){
@@ -119,18 +119,22 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
         }
 
     }else if (msg->data.c_str()[2] == '$'){
-        robot1[0] = '1';
-        robot1[1] = goal;
-        switch (robot1[2]) {
-            case '1':
-                publish_goal(1.8, 1.0, 0.0);
-                break;
-            case '2':
-                publish_goal(1.8, 5.0, 0.0);
-                break;
-            case '3':
-                publish_goal(8.5, 5.0, 0.0);
-                break;
+        if(robot1[0] != '1'){
+            robot1[0] = '1';
+            robot1[1] = goal;
+            switch (robot1[1]) {
+                case '1':
+                    publish_goal(1.8, 1.0, 0.0);
+                    break;
+                case '2':
+                    publish_goal(1.8, 5.0, 0.0);
+                    break;
+                case '3':
+                    publish_goal(8.5, 5.0, 0.0);
+                    break;
+            }
+        }else{
+            std::cout << "I'm busy ~ " << std::endl;
         }
     }
 }
