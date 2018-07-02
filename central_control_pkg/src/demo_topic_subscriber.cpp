@@ -2,6 +2,7 @@
 #include "std_msgs/String.h"
 #include <iostream>
 #include <ctype.h>
+#include <unistd.h>
 #include "geometry_msgs/PoseStamped.h"
 
 char robot1[10];
@@ -48,31 +49,19 @@ void number_callback(const std_msgs::String::ConstPtr& msg)
         char busy = '1';
         robot_status(dst,goal,busy,'1');
 
-        if(isupper(goal)){
-            switch (dst) {
-                case '1':
-                    publish_goal(1.5, 1.0, 0.0);
-                    break;
-                case '2':
-                    publish_goal(1.5, 5.0, 0.0);
-                    break;
-                case '3':
-                    publish_goal(8.5, 5.0, 0.0);
-                    break;
-            }   
-        }else{
+        if(!isupper(goal)){    
             do_service(goal);
-            switch (dst) {
-                case '1':
-                    publish_goal(1.5, 1.0, 0.0);
-                    break;
-                case '2':
-                    publish_goal(1.5, 5.0, 0.0);
-                    break;
-                case '3':
-                    publish_goal(8.5, 5.0, 0.0);
-                    break;
-            }
+        }
+        switch (dst) {
+            case '1':
+                publish_goal(1.8, 1.0, 0.0);
+                break;
+            case '2':
+                publish_goal(1.8, 5.0, 0.0);
+                break;
+            case '3':
+                publish_goal(8.8, 5.0, 0.0);
+                break;
         }
     }
 }
@@ -95,6 +84,7 @@ void do_service(char service){
             std::cout << "Take coffee." << std::endl;
             break;
     }
+    sleep(3);
 }
 
 //Callback of the topic /barcode
@@ -130,13 +120,13 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
 
     }else if (msg->data.c_str()[2] == '$'){
         robot1[0] = '1';
-        robot1[2] = goal;
+        robot1[1] = goal;
         switch (robot1[2]) {
             case '1':
-                publish_goal(1.5, 1.0, 0.0);
+                publish_goal(1.8, 1.0, 0.0);
                 break;
             case '2':
-                publish_goal(1.5, 5.0, 0.0);
+                publish_goal(1.8, 5.0, 0.0);
                 break;
             case '3':
                 publish_goal(8.5, 5.0, 0.0);
