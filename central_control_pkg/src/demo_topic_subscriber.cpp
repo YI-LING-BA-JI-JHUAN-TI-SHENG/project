@@ -92,10 +92,10 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
 {
     ROS_INFO("Recieved  [%s]", msg->data.c_str());
     char goal = msg->data.c_str()[0];
-    if(robot1[0] == '1' && msg->data.c_str()[2] != '$'){ 
-        if(goal == robot1[1]){
+    if(robot1[0] == '1' && msg->data.c_str()[2] != '$'){ // if false -> random guide robot
+        if(goal == robot1[1]){          // check the robot is arrived in the destination
             std::cout << "Arrived the room" << std::endl;
-            if(isupper(robot1[2])){
+            if(isupper(robot1[2])){     // if true -> guide robot,  false -> service robot
                 robot1[0] = '0';        // avoid that read qrcode again and in to this if statement
                 switch (robot1[2]) {
                     case 'A':
@@ -108,14 +108,23 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
                         publish_goal(8.5, 5.0, 0.0);
                         break;
                 }
+                robot1[0] = '1';
             }else{
                 robot1[0] = '0';
                 robot1[1] = '0';
                 robot1[2] = '0';
+                std::cout << "Go back to the starting point." << std::endl;
+                publish_goal(4.0, 1.0, 0.0);
             }
+        }else if(goal == robot1[2]){    // check the guide robot arrived in the goal
+            std::cout << "Arrived the destination " << std::endl;
+            std::cout << "Go back to the starting point." << std::endl;
+            robot1[0] = '0';
+            robot1[1] = '0';
+            robot1[2] = '0';
+            publish_goal(4.0, 1.0, 0.0);
         }else{
             std::cout << "[Wrong] Arrived the incorrect room" << std::endl;
-
         }
 
     }else if (msg->data.c_str()[2] == '$'){
