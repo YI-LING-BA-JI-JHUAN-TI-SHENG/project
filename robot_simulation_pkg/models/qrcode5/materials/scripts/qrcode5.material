@@ -1,0 +1,16 @@
+material qrcode/qr5
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture B.png
+                filtering anistropic
+                max_anisotropic 16
+            }
+        }
+    }    
+}

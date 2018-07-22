@@ -1,0 +1,54 @@
+<launch>
+
+  <!-- Map server -->
+ 	<arg name="map_file" default="$(find robot_navigation_pkg)/maps/maze2.yaml"/>
+  	<node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" respawn="false" >
+		<param name="frame_id" value="/map" />
+	</node>
+
+  <!--BEGIN ROBOT 1-->
+  <group ns="robot1">
+	<!--<param name="tf_prefix" value="robot1" />-->
+
+    <include file="$(find robot_navigation_pkg)/launch/includes/amcl.launch.xml">
+      <arg name="initial_pose_x" value="1"/>
+      <arg name="initial_pose_y" value="1"/>
+      <arg name="initial_pose_a" value="0"/>
+      <arg name="scan_topic" value="/robot1/scan"/> 
+	  <arg name="robot_name" value="robot1"/>
+	  <arg name="odom_frame_id" value="/robot1/odom"/>
+      <arg name="base_frame_id" value="/robot1/base_footprint"/>
+	  <arg name="global_frame_id"  value="/map"/>
+    </include> 
+       
+    <include file="$(find robot_navigation_pkg)/launch/includes/move_base.launch.xml">
+      <arg name="robot_name" value="robot1"/>
+	  <arg name="odom_topic" value="/robot1/odom" />
+    </include>
+  </group>
+  <!-- END ROBOT 1 -->
+
+  <!--BEGIN ROBOT 2-->
+  <group ns="robot2">
+	<!--<param name="tf_prefix" value="robot2" />-->
+
+    <include file="$(find robot_navigation_pkg)/launch/includes/amcl.launch.xml">
+      <arg name="initial_pose_x" value="5"/>
+      <arg name="initial_pose_y" value="3"/>
+      <arg name="initial_pose_a" value="0"/>
+      <arg name="scan_topic" value="/robot2/scan"/> 
+	  <arg name="robot_name" value="robot2"/>
+	  <arg name="odom_frame_id" value="/robot2/odom"/>
+      <arg name="base_frame_id" value="/robot2/base_footprint"/>
+	  <arg name="global_frame_id"  value="/map"/>
+    </include> 
+       
+    <include file="$(find robot_navigation_pkg)/launch/includes/move_base2.launch.xml">
+      <arg name="robot_name" value="robot2"/>
+	  <arg name="odom_topic" value="/robot2/odom" />
+    </include>
+  </group>
+  <!-- END ROBOT 2 -->
+
+</launch>
+

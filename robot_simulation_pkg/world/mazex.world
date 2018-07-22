@@ -385,5 +385,86 @@
         </visual>
       </link>
     </model>
+<model name="qrcode4">
+      <static>1</static>
+      <pose>-0.025 1 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://qrcode4/materials/scripts</uri>
+              <uri>model://qrcode4/materials/textures</uri>
+              <name>qrcode/qr4</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+<model name="qrcode5">
+      <static>1</static>
+      <pose>-0.025 5 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://qrcode5/materials/scripts</uri>
+              <uri>model://qrcode5/materials/textures</uri>
+              <name>qrcode/qr5</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+<model name="qrcode6">
+      <static>1</static>
+      <pose>9.975 1 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://qrcode6/materials/scripts</uri>
+              <uri>model://qrcode6/materials/textures</uri>
+              <name>qrcode/qr6</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
   </world>
 </sdf>

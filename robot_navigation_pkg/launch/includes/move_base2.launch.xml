@@ -13,13 +13,13 @@
   <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen" >
 	<!--<param name="tf_prefix" value="$(arg robot_name)"/>-->
     <remap from="map" to="/map"/>
-    <remap from="cmd_vel" to="/robot1/cmd_vel"/>
-    <remap from="odom"    to="/robot1/odom"/>
+    <remap from="cmd_vel" to="/robot2/cmd_vel"/>
+    <remap from="odom"    to="/robot2/odom"/>
     <param name="controller_frequency" value="10.0"/>
     <rosparam file="$(find robot_navigation_pkg)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find robot_navigation_pkg)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find robot_navigation_pkg)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find robot_navigation_pkg)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_navigation_pkg)/param/local_costmap_params2.yaml" command="load" />
+    <rosparam file="$(find robot_navigation_pkg)/param/global_costmap_params2.yaml" command="load" />
     <rosparam file="$(find robot_navigation_pkg)/param/base_local_planner_params.yaml" command="load" />
     <rosparam file="$(find robot_navigation_pkg)/param/dwa_local_planner_params.yaml" command="load" />
     <rosparam file="$(find robot_navigation_pkg)/param/move_base_params.yaml" command="load" />
