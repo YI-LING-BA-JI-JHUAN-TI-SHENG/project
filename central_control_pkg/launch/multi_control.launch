@@ -1,0 +1,3 @@
+<launch>
+    <node name="subscriber_node" pkg="central_control_pkg" type="demo_topic_subscriber_multi" output="screen"/>
+</launch>

@@ -31,8 +31,10 @@ include_directories(
 )
 
 add_executable(demo_topic_subscriber src/demo_topic_subscriber.cpp)
+add_executable(demo_topic_subscriber_multi src/demo_topic_subscriber_multi.cpp)
 
 add_dependencies(demo_topic_subscriber central_control_pkg_generate_messages_cpp)
+add_dependencies(demo_topic_subscriber_multi central_control_pkg_generate_messages_cpp)
 
 target_link_libraries(demo_topic_subscriber ${catkin_LIBRARIES})
-
+target_link_libraries(demo_topic_subscriber_multi ${catkin_LIBRARIES})
