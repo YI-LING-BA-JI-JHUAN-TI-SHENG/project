@@ -385,7 +385,7 @@
         </visual>
       </link>
     </model>
-<model name="qrcode4">
+<model name="qrcodeA">
       <static>1</static>
       <pose>-0.025 1 0.1 0 0 0</pose>
       <link name="link">
@@ -404,15 +404,15 @@
           </geometry>
           <material>
             <script>
-              <uri>model://qrcode4/materials/scripts</uri>
-              <uri>model://qrcode4/materials/textures</uri>
-              <name>qrcode/qr4</name>
+              <uri>model://qrcodeA/materials/scripts</uri>
+              <uri>model://qrcodeA/materials/textures</uri>
+              <name>qrcode/qrA</name>
             </script>
           </material>
         </visual>
       </link>
     </model>
-<model name="qrcode5">
+<model name="qrcodeB">
       <static>1</static>
       <pose>-0.025 5 0.1 0 0 0</pose>
       <link name="link">
@@ -431,15 +431,15 @@
           </geometry>
           <material>
             <script>
-              <uri>model://qrcode5/materials/scripts</uri>
-              <uri>model://qrcode5/materials/textures</uri>
-              <name>qrcode/qr5</name>
+              <uri>model://qrcodeB/materials/scripts</uri>
+              <uri>model://qrcodeB/materials/textures</uri>
+              <name>qrcode/qrB</name>
             </script>
           </material>
         </visual>
       </link>
     </model>
-<model name="qrcode6">
+<model name="qrcodeC">
       <static>1</static>
       <pose>9.975 1 0.1 0 0 0</pose>
       <link name="link">
@@ -458,9 +458,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://qrcode6/materials/scripts</uri>
-              <uri>model://qrcode6/materials/textures</uri>
-              <name>qrcode/qr6</name>
+              <uri>model://qrcodeC/materials/scripts</uri>
+              <uri>model://qrcodeC/materials/textures</uri>
+              <name>qrcode/qrC</name>
             </script>
           </material>
         </visual>

@@ -1,4 +1,4 @@
-material qrcode/qr4
+material qrcode/qrA
 {
     receive_shadows off
     technique
