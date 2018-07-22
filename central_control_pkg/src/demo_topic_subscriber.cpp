@@ -99,13 +99,13 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
                 robot1[0] = '0';        // avoid that read qrcode again and in to this if statement
                 switch (robot1[2]) {
                     case 'A':
-                        publish_goal(1.5, 1.0, 0.0);
+                        publish_goal(-1.2, 1.0, 0.0);
                         break;
                     case 'B':
-                        publish_goal(1.5, 5.0, 0.0);
+                        publish_goal(-1.2, 5.0, 0.0);
                         break;
                     case 'C':
-                        publish_goal(8.5, 5.0, 0.0);
+                        publish_goal(8.8, 1.0, 0.0);
                         break;
                 }
                 robot1[0] = '1';
@@ -114,7 +114,7 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
                 robot1[1] = '0';
                 robot1[2] = '0';
                 std::cout << "Go back to the starting point." << std::endl;
-                publish_goal(4.0, 1.0, 0.0);
+                publish_goal(5.0, 0.0, 0.0);
             }
         }else if(goal == robot1[2]){    // check the guide robot arrived in the goal
             std::cout << "Arrived the destination " << std::endl;
@@ -122,7 +122,7 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
             robot1[0] = '0';
             robot1[1] = '0';
             robot1[2] = '0';
-            publish_goal(4.0, 1.0, 0.0);
+            publish_goal(5.0, 0.0, 0.0);
         }else{
             std::cout << "[Wrong] Arrived the incorrect room" << std::endl;
         }
@@ -139,7 +139,16 @@ void qrread_callback(const std_msgs::String::ConstPtr& msg)
                     publish_goal(1.8, 5.0, 0.0);
                     break;
                 case '3':
-                    publish_goal(8.5, 5.0, 0.0);
+                    publish_goal(8.8, 5.0, 0.0);
+                    break;
+                case 'A':
+                    publish_goal(-1.2, 1.0, 0.0);
+                    break;
+                case 'B':
+                    publish_goal(-1.2, 5.0, 0.0);
+                    break;
+                case 'C':
+                    publish_goal(8.8, 1.0, 0.0);
                     break;
             }
         }else{
