@@ -55,15 +55,15 @@ function connect(){
 // ------------------
 
 // Create a Topic object with details of the topic's name and message type.
-var r1CmdVel = new ROSLIB.Topic({
+var robot1CmdVel = new ROSLIB.Topic({
   ros : ros,
-  name : '/r1/cmd_vel',
+  name : '/robot1/cmd_vel',
   messageType : 'geometry_msgs/Twist'
 });
 
-var r2CmdVel = new ROSLIB.Topic({
+var robot2CmdVel = new ROSLIB.Topic({
   ros : ros,
-  name : '/r2/cmd_vel',
+  name : '/robot2/cmd_vel',
   messageType : 'geometry_msgs/Twist'
 });
 
@@ -176,10 +176,10 @@ function PublishTwist(clicked_id) {
     }
   });
   if (controlRobot == "r1" || controlRobot == "r1r2"){
-    r1CmdVel.publish(twist);
+    robot1CmdVel.publish(twist);
   }
   if (controlRobot == "r2" || controlRobot == "r1r2"){
-    r2CmdVel.publish(twist);
+    robot2CmdVel.publish(twist);
   }
 }
 
@@ -202,10 +202,10 @@ function MouseUp(){
     }
   });
   if (controlRobot == "r1" || controlRobot == "r1r2"){
-    r1CmdVel.publish(stop);
+    robot1CmdVel.publish(stop);
   }
   if (controlRobot == "r2" || controlRobot == "r1r2"){
-    r2CmdVel.publish(stop);
+    robot2CmdVel.publish(stop);
   }
 }
 
