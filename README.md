@@ -79,5 +79,16 @@ $ roslaunch central_control_pkg control.launch
 # test
 $ rostopic echo /move_base_simple/goal
 $ rostopic pub /speaker std_msgs/String 1:a     
-$ rostopic pub /barcode std_msgs/String "'1'"
+$ rostopic pub /barcode std_msgs/String 1:_
+```
+
+### Multiple central control
+
+```sh
+$ roslaunch central_control_pkg multi_control.launch
+# test
+$ rostopic echo robot1/move_base_simple/goal
+$ rostopic echo robot2/move_base_simpel/goal
+$ rostopic pub /speaker std_msgs/String 1:a     
+$ rostopic pub /barcode std_msgs/String 1:_
 ```
