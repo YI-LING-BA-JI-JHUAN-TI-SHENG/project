@@ -53,6 +53,16 @@ $ roslaunch robot_navigation_pkg amcl.launch
 $ rviz
 $ rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
 ```
+### Multiple Navigation
+
+```sh
+$ roslaunch robot_simulation_pkg simulation.launch
+$ roslaunch robot_navigation_pkg multi_navigation.launch
+$ rviz
+$ rostopic pub /robot1/move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
+$ rostopic pub /robot2/move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
+```
+
 
 ### Watch map on web
 
