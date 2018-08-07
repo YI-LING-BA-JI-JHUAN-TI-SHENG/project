@@ -78,7 +78,7 @@ $ roslaunch robot_navigation_pkg amcl.launch
 $ roslaunch central_control_pkg control.launch
 # test
 $ rostopic echo /move_base_simple/goal
-$ rostopic pub /speaker std_msgs/String 1:a     
+$ rostopic pub /speaker std_msgs/String 1:a
 $ rostopic pub /barcode std_msgs/String 1:_
 ```
 
@@ -89,6 +89,7 @@ $ roslaunch central_control_pkg multi_control.launch
 # test
 $ rostopic echo robot1/move_base_simple/goal
 $ rostopic echo robot2/move_base_simpel/goal
-$ rostopic pub /speaker std_msgs/String 1:a     
-$ rostopic pub /barcode std_msgs/String 1:_
+$ rostopic pub /speaker std_msgs/String 1:a
+$ rostopic pub robot1/barcode std_msgs/String 1:_
+$ rostopic pub robot2/barcode std_msgs/String 1:_
 ```
