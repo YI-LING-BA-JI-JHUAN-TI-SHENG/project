@@ -29,8 +29,8 @@ int main(int argc, char **argv)
     // Create a subscriber object subscribe /speaker
     ros::Subscriber number_subscriber = node_obj.subscribe("/speaker",10,number_callback);
     // Create a subscriber object subscribe barcode
-    ros::Subscriber arrived_subscriber = node_obj.subscribe("/barcode1",10,qrread_callback1);
-    ros::Subscriber arrived_subscriber2 = node_obj.subscribe("/barcode2",10,qrread_callback2);
+    ros::Subscriber arrived_subscriber = node_obj.subscribe("/robot1/barcode",10,qrread_callback1);
+    ros::Subscriber arrived_subscriber2 = node_obj.subscribe("/robot2/barcode",10,qrread_callback2);
 
     // create publish node
     ctrl_pub1 = node_obj.advertise<geometry_msgs::PoseStamped>("robot1/move_base_simple/goal",500);
