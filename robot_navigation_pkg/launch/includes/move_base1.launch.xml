@@ -24,4 +24,5 @@
     <rosparam file="$(find robot_navigation_pkg)/param/dwa_local_planner_params.yaml" command="load" />
     <rosparam file="$(find robot_navigation_pkg)/param/move_base_params.yaml" command="load" />
   </node>
+  <node pkg="topic_tools" type="relay" name="relay" args="/robot1/cmd_vel /cmd_vel"/>
 </launch>

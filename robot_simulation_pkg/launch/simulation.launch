@@ -27,14 +27,14 @@
     </node>
   </group>
 
-  <group ns="robot2">
+  <!--  <group ns="robot2">
     <param name="tf_prefix" value="robot2"/>
 
     <param name="robot_description" command="$(find xacro)/xacro.py
       '$(find robot_description_pkg)/urdf/diff_wheeled_robot_r2_ns.xacro'" />
-
+    -->
     <!-- push robot_description to factory and spawn robot in gazebo -->
-    <node name="spawn_robot2" pkg="gazebo_ros" type="spawn_model"
+    <!--  <node name="spawn_robot2" pkg="gazebo_ros" type="spawn_model"
           args="-param robot_description
                 -urdf
                 -unpause
@@ -44,11 +44,11 @@
                 -model robot2
                 -ros_namespace /gazebo"
           respawn="false" output="screen" />
-
+-->
     <!-- start robot state publisher -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher"
+    <!-- <node pkg="robot_state_publisher" type="robot_state_publisher"
       name="robot_state_publisher" output="screen" >
     <param name="publish_frequency" type="double" value="50.0" />
     </node>
-  </group>
+  </group>-->
 </launch>

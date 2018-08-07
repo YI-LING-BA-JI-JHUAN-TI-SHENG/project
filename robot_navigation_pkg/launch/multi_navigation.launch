@@ -24,7 +24,7 @@
     </include>
   </group>
 
-  <group ns="robot2">
+  <!-- <group ns="robot2">
     <include file="$(find robot_navigation_pkg)/launch/includes/amcl_multi.launch.xml">
       <arg name="initial_pose_x" value="5"/>
       <arg name="initial_pose_y" value="3"/>
@@ -40,5 +40,5 @@
       <arg name="robot_name" value="robot2"/>
       <arg name="odom_topic" value="/robot2/odom" />
     </include>
-  </group>
+  </group>-->
 </launch>
