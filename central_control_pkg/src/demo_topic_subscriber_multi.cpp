@@ -8,6 +8,8 @@
 char robot1[10];
 char robot2[10];
 int cnt = 0;
+int flag1 = 1;
+int flag2 = 1;
 ros::Publisher ctrl_pub1;
 ros::Publisher ctrl_pub2;
 void number_callback(const std_msgs::String::ConstPtr& msg);
@@ -51,10 +53,10 @@ void number_callback(const std_msgs::String::ConstPtr& msg)
         std::cout << "I'm busy ~ " << std::endl;
     }else{
         cnt = 1;
+        char busy = '1';
         char dst  = msg->data.c_str()[0];
         char goal = msg->data.c_str()[2];
-        char busy = '1';
-        robot_status(dst,goal,busy);
+        robot_status(busy, dst, goal);
 
         if(!isupper(goal)){
             do_service(goal);
@@ -73,7 +75,7 @@ void number_callback(const std_msgs::String::ConstPtr& msg)
     }
 }
 
-void robot_status(char d, char g, char b){
+void robot_status(char b, char d, char g){
     robot1[0] = b;
     robot1[1] = d;
     robot1[2] = g;
@@ -108,22 +110,26 @@ void qrread_callback1(const std_msgs::String::ConstPtr& msg)
     char goal = msg->data.c_str()[0];
     if(robot1[0] == '1' && msg->data.c_str()[2] != '$'){ // if false -> random guide robot
         if(goal == robot1[1]){          // check the robot is arrived in the destination
-            std::cout << "robot1 arrived the room" << std::endl;
             if(isupper(robot1[2])){     // if true -> guide robot,  false -> service robot
-                robot1[0] = '0';        // avoid that read qrcode again and in to this if statement
-                switch (robot1[2]) {
-                    case 'A':
-                        publish_goal(-1.2, 1.0, 0.0);
-                        break;
-                    case 'B':
-                        publish_goal(-1.2, 5.0, 0.0);
-                        break;
-                    case 'C':
-                        publish_goal(8.8, 1.0, 0.0);
-                        break;
+                if(flag1 == 1){
+                    std::cout << "robot1 arrived the room" << std::endl;
+                    robot1[0] = '0';        // avoid that read qrcode again and in to this if statement
+                    switch (robot1[2]) {
+                        case 'A':
+                            publish_goal(-1.2, 1.0, 0.0);
+                            break;
+                        case 'B':
+                            publish_goal(-1.2, 5.0, 0.0);
+                            break;
+                        case 'C':
+                            publish_goal(8.8, 1.0, 0.0);
+                            break;
+                    }
+                    robot1[0] = '1';
+                    flag1 = 0;
                 }
-                robot1[0] = '1';
             }else{
+                std::cout << "robot1 arrived the room" << std::endl;
                 robot1[0] = '0';
                 robot1[1] = '0';
                 robot1[2] = '0';
@@ -177,22 +183,26 @@ void qrread_callback2(const std_msgs::String::ConstPtr& msg)
     char goal = msg->data.c_str()[0];
     if(robot2[0] == '1' && msg->data.c_str()[2] != '$'){ // if false -> random guide robot
         if(goal == robot2[1]){          // check the robot is arrived in the destination
-            std::cout << "robot2 Arrived the room" << std::endl;
             if(isupper(robot2[2])){     // if true -> guide robot,  false -> service robot
-                robot2[0] = '0';        // avoid that read qrcode again and in to this if statement
-                switch (robot2[2]) {
-                    case 'A':
-                        publish_goal(-1.2, 1.0, 0.0);
-                        break;
-                    case 'B':
-                        publish_goal(-1.2, 5.0, 0.0);
-                        break;
-                    case 'C':
-                        publish_goal(8.8, 1.0, 0.0);
-                        break;
+                if(flag2 == 1){
+                    std::cout << "robot2 Arrived the room" << std::endl;
+                    robot2[0] = '0';        // avoid that read qrcode again and in to this if statement
+                    switch (robot2[2]) {
+                        case 'A':
+                            publish_goal(-1.2, 1.0, 0.0);
+                            break;
+                        case 'B':
+                            publish_goal(-1.2, 5.0, 0.0);
+                            break;
+                        case 'C':
+                            publish_goal(8.8, 1.0, 0.0);
+                            break;
+                    }
+                    robot2[0] = '1';
+                    flag2 = 0;
                 }
-                robot2[0] = '1';
             }else{
+                std::cout << "robot2 Arrived the room" << std::endl;
                 robot2[0] = '0';
                 robot2[1] = '0';
                 robot2[2] = '0';
@@ -253,8 +263,9 @@ void publish_goal (float x, float y, float z)
         ctrl_pub2.publish(p);
         if(x == 5.0 && y == 0.0 && z == 0.0){
             std::cout << "Robot go back to the starting point." << std::endl;
+            flag1 = 1;
+            flag2 = 1;
         }
-
         cnt = 0;
     }else{
         cnt += 1;
