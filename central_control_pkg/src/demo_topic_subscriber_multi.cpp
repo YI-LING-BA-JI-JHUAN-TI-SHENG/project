@@ -155,7 +155,8 @@ void qrread_callback1(const std_msgs::String::ConstPtr& msg)
             std::cout << "[Wrong] robot1 arrived the incorrect room" << std::endl;
         }
 
-    }else if (msg->data.c_str()[2] == '$'){
+    }
+    /*else if (msg->data.c_str()[2] == '$'){
         if(robot1[0] != '1'){
             robot1[0] = '1';
             robot1[1] = goal;
@@ -182,7 +183,7 @@ void qrread_callback1(const std_msgs::String::ConstPtr& msg)
         }else{
             std::cout << "robot1 is busy ~ " << std::endl;
         }
-    }
+    }*/
 }
 
 void qrread_callback2(const std_msgs::String::ConstPtr& msg)
@@ -232,6 +233,9 @@ void qrread_callback2(const std_msgs::String::ConstPtr& msg)
         if(robot2[0] != '1'){
             robot2[0] = '1';
             robot2[1] = goal;
+            robot1[0] = '1';
+            robot1[1] = goal;
+            cnt = 1;
             switch (robot2[1]) {
                 case '1':
                     publish_goal(1.8, 1.0, 0.0);
