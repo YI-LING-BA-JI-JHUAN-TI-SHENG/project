@@ -49,14 +49,15 @@ void number_callback(const std_msgs::String::ConstPtr& msg)
     //ROS_INFO("Recieved  [%d]",msg->data);
     ROS_INFO("Recieved  [%s]", msg->data.c_str());
     //std::cout << msg->data << std::endl;
-    if(msg->data.c_str()[0] == '_'){
+    if(msg->data.c_str()[0] == '_'){    // reset
         for( int i = 0 ; i < 3 ; i++){
             robot1[i] = '0';
             robot2[i] = '0';
         }
+        std::cout << "<Reset> I'm free. " << std::endl;
         cnt = 1;
         publish_goal(5.0, 0.0, 0.0);
-    }else if(robot1[0] == '1' || robot2[0] == '1'){
+    }else if(robot1[0] == '1' || robot2[0] == '1'){     // robot is doint other task
         std::cout << "I'm busy ~ " << std::endl;
     }else{
         cnt = 1;
