@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     // Created a nodehandle object
     ros::NodeHandle node_obj;
     // Create a subscriber object subscribe /r1/cmd_vel
-    ros::Subscriber velocity_subscriber = node_obj.subscribe("/r1/cmd_vel",50,velocity_callback);
+    ros::Subscriber velocity_subscriber = node_obj.subscribe("/robot1/cmd_vel",50,velocity_callback);
     // create publish node
     vel_pub = node_obj.advertise<geometry_msgs::Twist>("/cmd_vel",100);
 
@@ -30,12 +30,12 @@ void velocity_callback(const geometry_msgs::Twist & cmd_input)
 {
     //ROS_INFO("Recieved  [%d]",msg->data);
     float lx,ly,lz,ax,ay,az;
-    lx=cmd_input.linear.x/5;
-    ly=cmd_input.linear.y/5;
-    lz=cmd_input.linear.z/5;
-    ax=cmd_input.angular.x;
-    ay=cmd_input.angular.y;
-    az=cmd_input.angular.z;    
+    lx=cmd_input.linear.x/8;
+    ly=cmd_input.linear.y/8;
+    lz=cmd_input.linear.z/8;
+    ax=cmd_input.angular.x*1.2;
+    ay=cmd_input.angular.y*1.2;
+    az=cmd_input.angular.z*1.2;
     publish_vel(lx,ly,lz,ax,ay,az);
 }
 
