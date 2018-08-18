@@ -89,7 +89,13 @@ $ roslaunch central_control_pkg multi_control.launch
 # test
 $ rostopic echo robot1/move_base_simple/goal
 $ rostopic echo robot2/move_base_simpel/goal
+# three types of service
 $ rostopic pub /speaker std_msgs/String 1:a
+$ rostopic pub /speaker std_msgs/String 2:A
+$ rostopic pub /robot2/barcode std_msgs/String 3:$
+# simulate that robot arrive in destinition
 $ rostopic pub robot1/barcode std_msgs/String 1:_
 $ rostopic pub robot2/barcode std_msgs/String 1:_
+# reset
+$ rostopic pub /speaker std_msgs/String _:_
 ```
