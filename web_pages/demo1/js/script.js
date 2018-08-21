@@ -98,6 +98,12 @@ function mouseDown(clicked_id) {
   publishData(data);
 }
 
+function robotReset() {
+  var data = "_:_";
+  console.log(data);
+  publishData(data);
+}
+
 function publishData(data) {
   var msg = new ROSLIB.Message({
     data : data
