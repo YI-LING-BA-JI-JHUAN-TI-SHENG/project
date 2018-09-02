@@ -1,5 +1,11 @@
 #!/bin/sh
 gnome-terminal --window --maximize \
+    --tab -t "image1" \
+        -e 'bash -c "sleep 3; \
+            rosrun image_view image_view image:=/robot1/image"' \
+    --tab -t "image2" \
+        -e 'bash -c "sleep 3; \
+            rosrun image_view image_view image:=/robot2/image"' \
     --tab -t "gazebo" \
         -e 'bash -c "sleep 1; \
             roslaunch robot_simulation_pkg simulation.launch"' \
