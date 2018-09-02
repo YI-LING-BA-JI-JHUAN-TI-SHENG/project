@@ -13,6 +13,21 @@ catkin_ws/
       central_control_pkg/      ← package
 ```
 
+## Run Demo
+
+### Setup
+
+1. Plug in the RPi3 connected to uvc camera with usb cable.
+2. Open EV3 and make sure that it connected to AP.
+
+### Run
+
+1. Run `sh run.sh`.
+2. Input sudo password in docker tab.
+3. Run `ev3_manager` in ev3 tab, and wait connection.
+4. Run `sh launch_all.sh` in Terminal tab.
+5. Input password in RPi3 uvc tab, and run `rosrun uvc_camera uvc_camera_node`.
+
 ## Usage command
 
 ### Simulation in gazebo
