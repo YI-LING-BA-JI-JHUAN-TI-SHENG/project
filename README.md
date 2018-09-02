@@ -37,12 +37,20 @@ $ roslaunch robot_simulation_pkg simulation.launch
 
 + Open web page and input IP address.
 
-### Open zbar example launch
+### Open zbar
 
 + Need to install zbar `sudo apt-get install ros-indigo-zbar-ros`
 
 ```sh
-$ roslaunch zbar_ros_pkg example.launch
+$ roslaunch zbar_ros_pkg open_zbar.launch
+```
+
+### Multiple open zbar
+
++ Need to install zbar `sudo apt-get install ros-indigo-zbar-ros`
+
+```sh
+$ roslaunch zbar_ros_pkg multi_open_zbar.launch
 ```
 
 ### Navigation
