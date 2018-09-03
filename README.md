@@ -86,7 +86,6 @@ $ rostopic pub /robot1/move_base_simple/goal geometry_msgs/PoseStamped '{header:
 $ rostopic pub /robot2/move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
 ```
 
-
 ### Watch map on web
 
 ```sh
@@ -121,4 +120,17 @@ $ rostopic pub robot1/barcode std_msgs/String 1:_
 $ rostopic pub robot2/barcode std_msgs/String 1:_
 # reset
 $ rostopic pub /speaker std_msgs/String _:_
+```
+
+### Watch image of the camera on the robot (single robot)
+```sh
+$ rosrun image_view image_view image:=/rrbot/camera1/image_raw
+```
+
+### Watch image of the camera on the robot(multiple robots)
+```sh
+# virtual robot
+$ rosrun image_view image_view image:=/robot1/image
+# real robot
+$ rosrun image_view image_view image:=/robot2/image
 ```
