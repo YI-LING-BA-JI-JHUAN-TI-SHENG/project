@@ -8,8 +8,8 @@
 
   <group ns="robot1">
     <include file="$(find robot_navigation_pkg)/launch/includes/amcl_multi.launch.xml">
-      <arg name="initial_pose_x" value="1"/>
-      <arg name="initial_pose_y" value="1"/>
+      <arg name="initial_pose_x" value="5"/>
+      <arg name="initial_pose_y" value="0"/>
       <arg name="initial_pose_a" value="0"/>
       <arg name="scan_topic" value="/robot1/scan"/>
       <arg name="robot_name" value="robot1"/>
