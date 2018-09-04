@@ -134,3 +134,28 @@ $ rosrun image_view image_view image:=/robot1/image
 # real robot
 $ rosrun image_view image_view image:=/robot2/image
 ```
+
+### Note
++ `vim /etc/hosts`
+  + add
+  + `xxx.xxx.xxx.xxx pc-name`
+  + `xxx.xxx.xxx.xxx master`
+  + `192.168.1.111 robot`
+  + `192.168.1.101 ev3dev`
++ `vim ~/.bashrc` (need to close all terminals after setting)
+  + add
+  + `source ~/catkin_ws/devel/setup.bash`
+  + `export ROS_MASTER_URI=http://master:11311/`
+  + `export ROS_HOSTNAME=xxx.xxx.xxx.xxx`
++ EV3 `ssh root@192.168.1.101`
+  + `vim /etc/hosts`
+  + `192.168.1.111 robot`
+  + `xxx.xxx.xxx.xxx master`
++ RPi3 `ssh ubuntu@192.168.1.108`
+  + `vim /etc/hosts`
+  + `192.168.1.108 ubiquityrobot ubiquityrobot.local`
+  + `xxx.xxx.xxx.xxx master`
++ docker
+  + `vim ~/rosev3/gripp3r/.env`
+  + `MASTER_URI=http://xxx.xxx.xxx.xxx:11311`
+Web Server for Chrome
