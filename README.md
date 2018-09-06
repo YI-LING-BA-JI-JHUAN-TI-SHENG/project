@@ -1,6 +1,30 @@
 # Project
 
+## Introduction
+
+This project is a project for COMPUTER PROJECT DESIGN, a required subject of
+NCKU CSIE (Department of Computer Science and Information Engineering, National Cheng Kung University).
+The topic is "Route Planning Based on Communication between Virtual and Physical Network Interface: Unmanned Hotel System Based on Robot Operating System".
+In chinese it is named 「虛網實規：基於ROS建立之無人旅店系統」.
+The advising professor is Chuan-Ching Sue (蘇銓清) professor, and the members of
+this team is 黃柏瑄、洪瑞隆、鍾日超.
+The main function is to let virtual and physical move synchronously and we design
+three scenarios:
+1. Press the button in the room, then robot takes some needs and go to the specific room.
+2. Press the button in the room, then robot comes and navigates to the specific destination.
+3. Let the robot scan QRcode and robot navigates to the specific destionation.
+
+## Demo video
+
+[![DEMO](https://img.youtube.com/vi/GZtqCUj0kKk/0.jpg)](https://www.youtube.com/watch?v=GZtqCUj0kKk)
+
+## Requirements
+
++ Ubuntu 14.04
++ ROS Indigo
+
 ## File Architecture
+
 ```
 catkin_ws/
 └── src/
@@ -23,7 +47,7 @@ catkin_ws/
         └── README.md
 ```
 
-## Run Demo
+## Setup, Build and Run Demo
 
 ### 1. Download necessary repositories
 
@@ -89,7 +113,7 @@ xxx.xxx.xxx.xxx master
 1. Plug in the RPi3 connected to uvc camera with usb cable.
 2. Open EV3 and make sure that it connected to AP.
 
-### 4. Compile project
+### 4. Build and compile project
 
 ```bash
 $ cd ~/catkin_ws/
