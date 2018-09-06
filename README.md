@@ -25,12 +25,71 @@ catkin_ws/
 
 ## Run Demo
 
-### Setup
+### 1. Download necessary repositories
+
+```bash
+$ cd catkin_ws/src/
+$ git clone https://github.com/YI-LING-BA-JI-JHUAN-TI-SHENG/project.git
+$ cd ~/
+$ git clone https://github.com/YI-LING-BA-JI-JHUAN-TI-SHENG/rosev3.git
+```
+
+### 2. Setup IP configuration
+
++ `xxx.xxx.xxx.xxx` represent the static IP address for master.
+
+1. master IP in main computer.
+```bash
+$ vim /etc/hosts
+```
+```
+xxx.xxx.xxx.xxx [your-pc-name]
+xxx.xxx.xxx.xxx master
+192.168.1.111   robot
+192.168.1.101   ev3dev
+```
+```bash
+$ vim ~/.bashrc
+```
+```
+export ROS_MASTER_URI=http://master:11311/
+export ROS_HOSTNAME=xxx.xxx.xxx.xxx
+```
+
+2. set docker.
+```bash
+$ vim ~/rosev3/gripp3r/.env
+```
+```
+MASTER_URI=http://xxx.xxx.xxx.xxx:11311
+```
+
+3. set EV3 robot.
+```bash
+$ ssh root@192.168.1.101
+$ vim /etc/hosts
+```
+```
+192.168.1.111 robot
+xxx.xxx.xxx.xxx master
+```
+
+4. set Raspberry Pi 3.
+```bash
+$ ssh ubuntu@192.168.1.108
+$ vim /etc/hosts
+```
+```
+192.168.1.108 ubiquityrobot ubiquityrobot.local
+xxx.xxx.xxx.xxx master
+```
+
+### 3. Hardware setup
 
 1. Plug in the RPi3 connected to uvc camera with usb cable.
 2. Open EV3 and make sure that it connected to AP.
 
-### Run
+### 4. Run
 
 1. Run `sh run.sh`.
 2. Input sudo password in docker tab.
