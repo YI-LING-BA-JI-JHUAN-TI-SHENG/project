@@ -28,7 +28,7 @@ catkin_ws/
 ### 1. Download necessary repositories
 
 ```bash
-$ cd catkin_ws/src/
+$ cd ~/catkin_ws/src/
 $ git clone https://github.com/YI-LING-BA-JI-JHUAN-TI-SHENG/project.git
 $ cd ~/
 $ git clone https://github.com/YI-LING-BA-JI-JHUAN-TI-SHENG/rosev3.git
@@ -89,13 +89,39 @@ xxx.xxx.xxx.xxx master
 1. Plug in the RPi3 connected to uvc camera with usb cable.
 2. Open EV3 and make sure that it connected to AP.
 
-### 4. Run
+### 4. Compile project
 
-1. Run `sh run.sh`.
-2. Input sudo password in docker tab.
-3. Run `ev3_manager` in ev3 tab, and wait connection.
-4. Run `sh launch_all.sh` in Terminal tab.
-5. Input password in RPi3 uvc tab, and run `rosrun uvc_camera uvc_camera_node`.
+```bash
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+
+### 5. Run
+
+1. Change to project directory.
+```bash
+$ cd ~/catkin_ws/src/project/
+```
+
+2. Run `run.sh`.
+```bash
+$ sh run.sh
+```
+
+3. Input sudo password in docker tab.
+4. Run `ev3_manager` in ev3 tab, and wait connection.
+5. Run `launch_all.sh` in Terminal tab.
+```bash
+$ sh launch_all.sh
+```
+
+6. Input password in RPi3 uvc tab, and run `rosrun uvc_camera uvc_camera_node`.
+```bash
+$ rosrun uvc_camera uvc_camera_node
+```
+
+7. Open web server by using chrome plugin.
+  + choose the `~/catkin_ws/src/web_pages/demo1/` folder.
 
 ## Usage command
 
