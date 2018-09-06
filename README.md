@@ -3,14 +3,24 @@
 ## File Architecture
 ```
 catkin_ws/
-  src/
-    project/                    ← this git repository
-      robot_control_pkg/        ← package
-        CMakeList.txt
-        package.xml
-      robot_description_pkg/    ← package
-      robot_simulation_pkg/     ← package
-      central_control_pkg/      ← package
+└── src/
+    └── project/                    ← this git repository
+        ├── robot_control_pkg/      ← package
+        │   ├── CMakeLists.txt
+        │   ├── launch/
+        │   ├── package.xml
+        │   └── src/
+        ├── robot_description_pkg/  ← package
+        ├── robot_navigation_pkg/   ← package
+        ├── robot_simulation_pkg/   ← package
+        ├── central_control_pkg/    ← package
+        ├── robot_converter_pkg/    ← package
+        ├── zbar_ros_pkg/           ← package
+        ├── web_pages/
+        ├── run.sh
+        ├── launch_all.sh
+        ├── LICENSE
+        └── README.md
 ```
 
 ## Run Demo
