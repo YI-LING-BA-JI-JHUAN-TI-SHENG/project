@@ -2,14 +2,16 @@
 
 ## Introduction
 
-This project is a project for COMPUTER PROJECT DESIGN, a required subject of
+This is a project for COMPUTER PROJECT DESIGN, a required course of
 NCKU CSIE (Department of Computer Science and Information Engineering, National Cheng Kung University).
-The topic is "Route Planning Based on Communication between Virtual and Physical Network Interface: Unmanned Hotel System Based on Robot Operating System".
+The project’s topic is "Route Planning Based on Communication between Virtual and Physical Network Interface: Unmanned Hotel System Based on Robot Operating System".
 In chinese it is named 「虛網實規：基於ROS建立之無人旅店系統」.
-The advising professor is Chuan-Ching Sue (蘇銓清) professor, and the members of
-this team is 黃柏瑄、洪瑞隆、鍾日超.
-The main function is to let virtual and physical move synchronously and we design
-three scenarios:
+The advising professor is professor Chuan-Ching Sue (蘇銓清), and the team members
+are 黃柏瑄、洪瑞隆、鍾日超. The main goal is to synchronise the communication virtual
+and physical networks. 
+
+We designed three scenarios:
+
 1. Press the button in the room, then robot takes some needs and go to the specific room.
 2. Press the button in the room, then robot comes and navigates to the specific destination.
 3. Let the robot scan QRcode and robot navigates to the specific destionation.
